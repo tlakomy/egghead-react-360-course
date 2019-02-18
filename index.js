@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     },
     greeting: {
         fontSize: 40,
-        width: '50%',
+        width: '30%',
         marginTop: 5,
         backgroundColor: '#0298D0',
         color: 'white'
