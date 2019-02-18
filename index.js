@@ -3,14 +3,26 @@ import { AppRegistry, StyleSheet, Text, View } from 'react-360';
 
 export default class travelVR extends React.Component {
     render() {
+        const {
+            mainView,
+            menuItem,
+            poland,
+            ukraine,
+            uk,
+            spain,
+            italy,
+            greece,
+            redText
+        } = styles;
+
         return (
-            <View style={styles.mainView}>
-                <Text style={styles.menuItem}>Poland</Text>
-                <Text style={styles.menuItem}>Ukraine</Text>
-                <Text style={styles.menuItem}>United Kingdom</Text>
-                <Text style={styles.menuItem}>Spain</Text>
-                <Text style={styles.menuItem}>Italy</Text>
-                <Text style={styles.menuItem}>Greece</Text>
+            <View style={mainView}>
+                <Text style={[menuItem, poland]}>Poland</Text>
+                <Text style={[menuItem, ukraine]}>Ukraine</Text>
+                <Text style={[menuItem, uk]}>United Kingdom</Text>
+                <Text style={[menuItem, spain]}>Spain</Text>
+                <Text style={[menuItem, italy, redText]}>Italy</Text>
+                <Text style={[menuItem, greece]}>Greece</Text>
             </View>
         );
     }
@@ -48,6 +60,9 @@ const styles = StyleSheet.create({
     },
     greece: {
         backgroundColor: '#0D5EAF'
+    },
+    redText: {
+        color: 'red'
     }
 });
 
