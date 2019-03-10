@@ -1,5 +1,6 @@
 import React from 'react';
 import { AppRegistry, asset, StyleSheet, View, Image } from 'react-360';
+import Bunny from './components/bunny';
 
 export default class travelVR extends React.Component {
     render() {
