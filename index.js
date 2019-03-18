@@ -1,5 +1,12 @@
 import React from 'react';
-import { AppRegistry, asset, StyleSheet, View, Image } from 'react-360';
+import {
+    AppRegistry,
+    asset,
+    StyleSheet,
+    View,
+    Image,
+    VrButton
+} from 'react-360';
 import Flag from './components/Flag';
 import Bunny from './components/Bunny';
 
@@ -11,8 +18,20 @@ const FLAGS_IMAGES = [
 ];
 
 export default class travelVR extends React.Component {
+    state = {
+        activeFlag: ''
+    };
+
     renderFlags() {
-        return FLAGS_IMAGES.map(image => <Flag key={image} image={image} />);
+        return FLAGS_IMAGES.map(image => (
+            <VrButton
+                key={image}
+                onEnter={() => this.setState({ activeFlag: image })}
+                onClick={() => console.log('on click', image)}
+            >
+                <Flag image={image} activeFlag={this.state.activeFlag} />
+            </VrButton>
+        ));
     }
 
     render() {
