@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import {
     AppRegistry,
     asset,
     StyleSheet,
     Environment,
+    Prefetch,
     View,
     Image,
     VrButton
@@ -43,14 +44,16 @@ export default class travelVR extends React.Component {
         return PLACES.map(place => {
             const { flag, panorama } = place;
             return (
-                <VrButton
-                    key={flag}
-                    onEnter={() => this.setState({ activeFlag: flag })}
-                    onExit={() => this.setState({ activeFlag: '' })}
-                    onClick={() => this.changeBackground(panorama)}
-                >
-                    <Flag image={flag} activeFlag={this.state.activeFlag} />
-                </VrButton>
+                <Fragment key={flag}>
+                    <Prefetch source={asset(panorama)} />
+                    <VrButton
+                        onEnter={() => this.setState({ activeFlag: flag })}
+                        onExit={() => this.setState({ activeFlag: '' })}
+                        onClick={() => this.changeBackground(panorama)}
+                    >
+                        <Flag image={flag} activeFlag={this.state.activeFlag} />
+                    </VrButton>
+                </Fragment>
             );
         });
     }
