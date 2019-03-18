@@ -12,6 +12,7 @@ export default class Flag extends React.Component {
 const styles = StyleSheet.create({
     flag: {
         height: 400,
-        width: 600
+        width: 600,
+        marginRight: 20
     }
 });

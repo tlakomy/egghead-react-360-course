@@ -3,20 +3,34 @@ import { AppRegistry, asset, StyleSheet, View, Image } from 'react-360';
 import Flag from './components/Flag';
 import Bunny from './components/Bunny';
 
-export default class travelVR extends React.Component {
-    render() {
-        const { mainView } = styles;
+const FLAGS_IMAGES = [
+    'flag_nasa.png',
+    'flag_spain.png',
+    'flag_italy.png',
+    'flag_ukraine.jpg'
+];
 
-        return <View style={mainView} />;
+export default class travelVR extends React.Component {
+    renderFlags() {
+        return FLAGS_IMAGES.map(image => <Flag key={image} image={image} />);
+    }
+
+    render() {
+        const { flagContainer } = styles;
+
+        return (
+            <View>
+                <View style={flagContainer}>{this.renderFlags()}</View>
+            </View>
+        );
     }
 }
 
 const styles = StyleSheet.create({
-    mainView: {
-        width: 4680,
+    flagContainer: {
         height: 600,
-        opacity: 0.3,
-        backgroundColor: '#eee',
+        width: 4680,
+        backgroundColor: 'rgba(255, 255, 255, 0.3)',
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center'
