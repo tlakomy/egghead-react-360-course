@@ -18,11 +18,6 @@ function init(bundle, parent, options = {}) {
         r360.getDefaultSurface()
     );
 
-    const location = new Location([3, -1, -1]);
-
-    // r360.renderToLocation(r360.createRoot('Bunny'), r360.getDefaultLocation());
-    r360.renderToLocation(r360.createRoot('Bunny'), location);
-
     // Load the initial environment
     r360.compositor.setBackground(r360.getAssetURL('360_world.jpg'));
 }
