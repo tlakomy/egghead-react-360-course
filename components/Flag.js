@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
         height: 400,
         width: 600,
         marginRight: 20,
-        opacity: 0.7
+        opacity: 0.5
     },
     activeFlag: {
         opacity: 1
