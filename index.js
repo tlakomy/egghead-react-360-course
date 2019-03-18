@@ -1,38 +1,26 @@
 import React from 'react';
 import { AppRegistry, asset, StyleSheet, View, Image } from 'react-360';
+import Flag from './components/Flag';
 
 export default class travelVR extends React.Component {
     render() {
-        const { mainView, flag } = styles;
+        const { mainView } = styles;
 
-        return (
-            <View style={mainView}>
-                <Image
-                    style={flag}
-                    source={{
-                        uri:
-                            'https://upload.wikimedia.org/wikipedia/commons/5/5a/Flag_of_Poland.jpg'
-                    }}
-                />
-                <Image style={flag} source={asset('flag_italy.png')} />
-            </View>
-        );
+        return <View style={mainView} />;
     }
 }
 
 const styles = StyleSheet.create({
     mainView: {
-        width: 600,
+        width: 4680,
         height: 600,
+        opacity: 0.3,
         backgroundColor: '#eee',
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center'
-    },
-    flag: {
-        width: '50%',
-        height: '40%'
     }
 });
 
 AppRegistry.registerComponent('travelVR', () => travelVR);
+AppRegistry.registerComponent('Flag', () => Flag);
