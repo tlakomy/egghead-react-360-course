@@ -3,6 +3,7 @@ import {
     AppRegistry,
     asset,
     StyleSheet,
+    Environment,
     View,
     Image,
     VrButton
@@ -10,11 +11,23 @@ import {
 import Flag from './components/Flag';
 import Bunny from './components/Bunny';
 
-const FLAGS_IMAGES = [
-    'flag_nasa.png',
-    'flag_spain.png',
-    'flag_italy.png',
-    'flag_ukraine.jpg'
+const PLACES = [
+    {
+        flag: 'flag_nasa.png',
+        panorama: 'stars.png'
+    },
+    {
+        flag: 'flag_spain.png',
+        panorama: 'spain.jpg'
+    },
+    {
+        flag: 'flag_italy.png',
+        panorama: 'italy.jpg'
+    },
+    {
+        flag: 'flag_ukraine.jpg',
+        panorama: 'ukraine.jpg'
+    }
 ];
 
 export default class travelVR extends React.Component {
@@ -22,17 +35,24 @@ export default class travelVR extends React.Component {
         activeFlag: ''
     };
 
+    changeBackground(panorama) {
+        Environment.setBackgroundImage(asset(panorama));
+    }
+
     renderFlags() {
-        return FLAGS_IMAGES.map(image => (
-            <VrButton
-                key={image}
-                onEnter={() => this.setState({ activeFlag: image })}
-                onExit={() => this.setState({ activeFlag: '' })}
-                onClick={() => console.log('on click', image)}
-            >
-                <Flag image={image} activeFlag={this.state.activeFlag} />
-            </VrButton>
-        ));
+        return PLACES.map(place => {
+            const { flag, panorama } = place;
+            return (
+                <VrButton
+                    key={flag}
+                    onEnter={() => this.setState({ activeFlag: flag })}
+                    onExit={() => this.setState({ activeFlag: '' })}
+                    onClick={() => this.changeBackground(panorama)}
+                >
+                    <Flag image={flag} activeFlag={this.state.activeFlag} />
+                </VrButton>
+            );
+        });
     }
 
     render() {
