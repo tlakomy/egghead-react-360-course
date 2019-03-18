@@ -31,6 +31,8 @@ export default class Bunny extends React.Component {
     componentDidMount() {
         this.spin();
         this.jump(0);
+
+        document.title = 'Bunny Fiesta';
     }
 
     render() {
