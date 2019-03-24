@@ -7,10 +7,13 @@ import {
     Prefetch,
     View,
     Image,
+    NativeModules,
     VrButton
 } from 'react-360';
 import Flag from './components/Flag';
 import Bunny from './components/Bunny';
+
+const { TitleChanger } = NativeModules;
 
 const PLACES = [
     {
@@ -40,20 +43,21 @@ export default class travelVR extends React.Component {
         activeFlag: ''
     };
 
-    changeBackground(panorama) {
+    changeBackground(panorama, name) {
         Environment.setBackgroundImage(asset(panorama));
+        TitleChanger.changeTitle(name);
     }
 
     renderFlags() {
         return PLACES.map(place => {
-            const { flag, panorama } = place;
+            const { flag, panorama, name } = place;
             return (
                 <Fragment key={flag}>
                     <Prefetch source={asset(panorama)} />
                     <VrButton
                         onEnter={() => this.setState({ activeFlag: flag })}
                         onExit={() => this.setState({ activeFlag: '' })}
-                        onClick={() => this.changeBackground(panorama)}
+                        onClick={() => this.changeBackground(panorama, name)}
                     >
                         <Flag image={flag} activeFlag={this.state.activeFlag} />
                     </VrButton>
