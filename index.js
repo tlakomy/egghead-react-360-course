@@ -14,18 +14,22 @@ import Bunny from './components/Bunny';
 
 const PLACES = [
     {
+        name: 'Space',
         flag: 'flag_nasa.png',
         panorama: 'stars.png'
     },
     {
+        name: 'Spain',
         flag: 'flag_spain.png',
         panorama: 'spain.jpg'
     },
     {
+        name: 'Italy',
         flag: 'flag_italy.png',
         panorama: 'italy.jpg'
     },
     {
+        name: 'Ukraine',
         flag: 'flag_ukraine.jpg',
         panorama: 'ukraine.jpg'
     }
