@@ -10,12 +10,6 @@ function init(bundle, parent, options = {}) {
         ...options
     });
 
-    const myCylinderSurface = new Surface(
-        4680,
-        600,
-        Surface.SurfaceShape.Cylinder
-    );
-
     const location = new Location([3, -1, -1]);
 
     r360.renderToLocation(r360.createRoot('Bunny'), location);
