@@ -1,7 +1,7 @@
 import React from 'react';
 import { AppRegistry, asset, StyleSheet, View, Image } from 'react-360';
 import Flag from './components/Flag';
-import Bunny from './components/Bunny';
+import Earth from './components/Earth';
 
 const FLAGS_IMAGES = [
     'flag_nasa.png',
@@ -39,4 +39,4 @@ const styles = StyleSheet.create({
 
 AppRegistry.registerComponent('travelVR', () => travelVR);
 AppRegistry.registerComponent('Flag', () => Flag);
-AppRegistry.registerComponent('Bunny', () => Bunny);
+AppRegistry.registerComponent('Earth', () => Earth);
