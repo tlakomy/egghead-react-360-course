@@ -10,7 +10,7 @@ import {
     VrButton
 } from 'react-360';
 import Flag from './components/Flag';
-import Bunny from './components/Bunny';
+import Earth from './components/Earth';
 
 const PLACES = [
     {
@@ -86,4 +86,4 @@ const styles = StyleSheet.create({
 
 AppRegistry.registerComponent('travelVR', () => travelVR);
 AppRegistry.registerComponent('Flag', () => Flag);
-AppRegistry.registerComponent('Bunny', () => Bunny);
+AppRegistry.registerComponent('Earth', () => Earth);
