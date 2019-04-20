@@ -4,7 +4,7 @@ import Entity from 'Entity';
 import AmbientLight from 'AmbientLight';
 import PointLight from 'PointLight';
 
-export default class Bunny extends React.Component {
+export default class Earth extends React.Component {
     render() {
         return (
             <View>
@@ -14,7 +14,7 @@ export default class Bunny extends React.Component {
                     style={{ transform: [{ translate: [0, 4, -1] }] }}
                 />
                 <Entity
-                    source={{ gltf2: asset('Bunny.gltf') }}
+                    source={{ gltf2: asset('Earth.gltf') }}
                     style={{ transform: [{ scale: 0.01 }, { rotateY: 45 }] }}
                 />
             </View>
