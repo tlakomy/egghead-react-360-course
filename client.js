@@ -16,9 +16,17 @@ function init(bundle, parent, options = {}) {
         Surface.SurfaceShape.Cylinder
     );
 
-    const location = new Location([3, -1, -1]);
+    // Render your app content to the default cylinder surface
+    r360.renderToSurface(
+        r360.createRoot('travelVR', {
+            /* initial props */
+        }),
+        myCylinderSurface
+    );
 
-    r360.renderToLocation(r360.createRoot('Bunny'), location);
+    const location = new Location([0, -1, -1]);
+
+    r360.renderToLocation(r360.createRoot('Earth'), location);
 
     // Load the initial environment
     r360.compositor.setBackground(r360.getAssetURL('360_world.jpg'));
