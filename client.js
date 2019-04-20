@@ -10,6 +10,20 @@ function init(bundle, parent, options = {}) {
         ...options
     });
 
+    const myCylinderSurface = new Surface(
+        4680,
+        600,
+        Surface.SurfaceShape.Cylinder
+    );
+
+    // Render your app content to the default cylinder surface
+    r360.renderToSurface(
+        r360.createRoot('travelVR', {
+            /* initial props */
+        }),
+        myCylinderSurface
+    );
+
     const location = new Location([0, -1, -1]);
 
     r360.renderToLocation(r360.createRoot('Earth'), location);
