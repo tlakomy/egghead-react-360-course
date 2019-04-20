@@ -6,10 +6,12 @@ import AmbientLight from 'AmbientLight';
 import PointLight from 'PointLight';
 
 const AnimatedEntity = Animated.createAnimatedComponent(Entity);
+const LOW_JUMP_VALUE = 1.5;
+const TOP_JUMP_VALUE = 1.75;
 
-export default class Bunny extends React.Component {
+export default class Earth extends React.Component {
     rotation = new Animated.Value(0);
-    jumpValue = new Animated.Value(0);
+    jumpValue = new Animated.Value(LOW_JUMP_VALUE);
 
     spin() {
         this.rotation.setValue(0);
@@ -21,7 +23,8 @@ export default class Bunny extends React.Component {
     }
 
     jump(value) {
-        let currentVal = value === 20 ? 0 : 20;
+        let currentVal =
+            value === TOP_JUMP_VALUE ? LOW_JUMP_VALUE : TOP_JUMP_VALUE;
         Animated.timing(this.jumpValue, {
             toValue: currentVal,
             duration: 500
@@ -30,9 +33,7 @@ export default class Bunny extends React.Component {
 
     componentDidMount() {
         this.spin();
-        this.jump(0);
-
-        document.title = 'Bunny Fiesta';
+        this.jump(LOW_JUMP_VALUE);
     }
 
     render() {
@@ -44,12 +45,11 @@ export default class Bunny extends React.Component {
                     style={{ transform: [{ translate: [0, 4, -1] }] }}
                 />
                 <AnimatedEntity
-                    source={{ gltf2: asset('Bunny.gltf') }}
+                    source={{ gltf2: asset('Earth.gltf') }}
                     style={{
                         transform: [
-                            { scale: 0.01 },
-                            { rotateY: 45 },
                             { translateY: this.jumpValue },
+                            { scale: 0.001 },
                             { rotateY: this.rotation }
                         ]
                     }}
