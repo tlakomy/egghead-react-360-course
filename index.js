@@ -22,7 +22,7 @@ export default class travelVR extends React.Component {
 
 const styles = StyleSheet.create({
     mainView: {
-        width: 600,
+        width: 1000,
         height: 600,
         backgroundColor: '#eee',
         flexDirection: 'row',
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center'
     },
     flag: {
-        width: '50%',
+        width: 400,
         height: '40%'
     }
 });
