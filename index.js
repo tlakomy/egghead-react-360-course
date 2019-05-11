@@ -65,11 +65,7 @@ export default class travelVR extends React.Component {
     render() {
         const { flagContainer } = styles;
 
-        return (
-            <View>
-                <View style={flagContainer}>{this.renderFlags()}</View>
-            </View>
-        );
+        return <View style={flagContainer}>{this.renderFlags()}</View>;
     }
 }
 
