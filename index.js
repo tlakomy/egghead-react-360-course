@@ -3,9 +3,9 @@ import {
     AppRegistry,
     asset,
     StyleSheet,
-    Environment,
     View,
     Image,
+    Environment,
     VrButton
 } from 'react-360';
 import Flag from './components/Flag';
@@ -40,19 +40,16 @@ export default class travelVR extends React.Component {
     }
 
     renderFlags() {
-        return PLACES.map(place => {
-            const { flag, panorama } = place;
-            return (
-                <VrButton
-                    key={flag}
-                    onEnter={() => this.setState({ activeFlag: flag })}
-                    onExit={() => this.setState({ activeFlag: '' })}
-                    onClick={() => this.changeBackground(panorama)}
-                >
-                    <Flag image={flag} activeFlag={this.state.activeFlag} />
-                </VrButton>
-            );
-        });
+        return PLACES.map(({ panorama, flag }) => (
+            <VrButton
+                key={flag}
+                onClick={() => this.changeBackground(panorama)}
+                onEnter={() => this.setState({ activeFlag: flag })}
+                onExit={() => this.setState({ activeFlag: '' })}
+            >
+                <Flag image={flag} activeFlag={this.state.activeFlag} />
+            </VrButton>
+        ));
     }
 
     render() {
