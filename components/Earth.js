@@ -11,13 +11,13 @@ export default class Earth extends React.Component {
                 <AmbientLight intensity={1.0} color={'#fff'} />
                 <PointLight
                     intensity={1}
-                    style={{ transform: [{ translate: [0, 1, -1] }] }}
+                    style={{ transform: [{ translate: [0, 1, 5] }] }}
                 />
                 <Entity
                     source={{ gltf2: asset('earth.gltf') }}
                     style={{
                         transform: [
-                            { translate: [0, 1.5, 0] },
+                            { translateY: 1.5 },
                             { scale: 0.001 },
                             { rotateY: 180 }
                         ]
