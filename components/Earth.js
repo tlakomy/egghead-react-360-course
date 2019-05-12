@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppRegistry, asset, View } from 'react-360';
+import { asset, View } from 'react-360';
 import Entity from 'Entity';
 import AmbientLight from 'AmbientLight';
 import PointLight from 'PointLight';
