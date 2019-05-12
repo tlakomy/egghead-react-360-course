@@ -26,9 +26,9 @@ export default class travelVR extends React.Component {
         return FLAGS_IMAGES.map(image => (
             <VrButton
                 key={image}
+                onClick={() => console.log('Click')}
                 onEnter={() => this.setState({ activeFlag: image })}
                 onExit={() => this.setState({ activeFlag: '' })}
-                onClick={() => console.log('on click', image)}
             >
                 <Flag image={image} activeFlag={this.state.activeFlag} />
             </VrButton>
