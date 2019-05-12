@@ -47,9 +47,9 @@ export default class travelVR extends React.Component {
                 <Fragment key={flag}>
                     <Prefetch source={asset(panorama)} />
                     <VrButton
+                        onClick={() => this.changeBackground(panorama)}
                         onEnter={() => this.setState({ activeFlag: flag })}
                         onExit={() => this.setState({ activeFlag: '' })}
-                        onClick={() => this.changeBackground(panorama)}
                     >
                         <Flag image={flag} activeFlag={this.state.activeFlag} />
                     </VrButton>
