@@ -3,12 +3,12 @@ import { AppRegistry, asset, StyleSheet, Image } from 'react-360';
 
 export default class Flag extends React.Component {
     render() {
-        const { flag } = styles;
-        const { activeFlag, image } = this.props;
+        const { flag, active } = styles;
+        const { image, activeFlag } = this.props;
 
         return (
             <Image
-                style={[flag, activeFlag === image && styles.activeFlag]}
+                style={[flag, activeFlag === image && active]}
                 source={asset(image)}
             />
         );
@@ -20,9 +20,9 @@ const styles = StyleSheet.create({
         height: 400,
         width: 600,
         marginRight: 20,
-        opacity: 0.5
+        opacity: 0.7
     },
-    activeFlag: {
+    active: {
         opacity: 1
     }
 });
