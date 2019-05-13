@@ -42,7 +42,7 @@ export default class Earth extends React.Component {
                 <AmbientLight intensity={1.0} color={'#fff'} />
                 <PointLight
                     intensity={1}
-                    style={{ transform: [{ translate: [0, 4, -1] }] }}
+                    style={{ transform: [{ translate: [0, 1, 5] }] }}
                 />
                 <AnimatedEntity
                     source={{ gltf2: asset('Earth.gltf') }}
