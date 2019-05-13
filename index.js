@@ -45,8 +45,7 @@ export default class travelVR extends React.Component {
     }
 
     renderFlags() {
-        return PLACES.map(place => {
-            const { flag, panorama } = place;
+        return PLACES.map(({ flag, panorama, name }) => {
             return (
                 <Fragment key={flag}>
                     <Prefetch source={asset(panorama)} />
